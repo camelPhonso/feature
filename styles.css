@@ -1,0 +1,50 @@
+:root{
+
+}
+
+#table{
+    width:70vw;
+    display:flex;
+    flex-flow:row nowrap;
+    justify-content: space-evenly;
+    padding:50px;
+    margin:auto;
+}
+
+.card{
+    height:400px;
+    width:200px;
+    border-radius:20px;
+    margin:-50px;
+}
+
+.lined:hover{
+    transform:translate(-15px, 20px);
+}
+
+.stacked{
+    position:absolute;
+    left:50%;
+    top: 100px;
+}
+
+.left{
+    transform:rotate(5deg);
+}
+
+.right{
+    transform:rotate(-5deg);
+}
+
+.card img{
+    height:400px;
+    width:250px;
+    object-fit:fill;
+    border-radius:20px;
+}
+
+form{
+    position:absolute;
+    top:70%;
+    left:50%;
+}
