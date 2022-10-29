@@ -7,34 +7,39 @@
         <script src="main.js" defer></script>
     </header>
     <body>
-        <div id="table">
-            <div class="card left stacked">
-                <img src="https://github.com/camelPhonso/feature/blob/main/tarot/deck.jpeg?raw=true">
+        <section id="fun">
+            <div id="table">
+                <div class="card left stacked">
+                    <img src="https://github.com/camelPhonso/feature/blob/main/tarot/deck.jpeg?raw=true">
+                </div>
+                <div class="card right stacked">
+                    <img src="https://github.com/camelPhonso/feature/blob/main/tarot/deck.jpeg?raw=true">
+                </div>
+                <div class="card stacked">
+                    <img src="https://github.com/camelPhonso/feature/blob/main/tarot/deck.jpeg?raw=true">
+                </div>
+                <div class="card stacked">
+                    <img src="https://github.com/camelPhonso/feature/blob/main/tarot/deck.jpeg?raw=true">
+                </div>
+                <div class="card stacked">
+                    <img src="https://github.com/camelPhonso/feature/blob/main/tarot/deck.jpeg?raw=true">
+                </div>
+                <div class="card stacked">
+                    <img src="https://github.com/camelPhonso/feature/blob/main/tarot/deck.jpeg?raw=true">
+                </div>
+                <div class="card stacked">
+                    <img src="https://github.com/camelPhonso/feature/blob/main/tarot/deck.jpeg?raw=true">
+                </div>
+                <div class="card stacked">
+                    <img src="https://github.com/camelPhonso/feature/blob/main/tarot/deck.jpeg?raw=true">
+                </div>
             </div>
-            <div class="card right stacked">
-                <img src="https://github.com/camelPhonso/feature/blob/main/tarot/deck.jpeg?raw=true">
-            </div>
-            <div class="card stacked">
-                <img src="https://github.com/camelPhonso/feature/blob/main/tarot/deck.jpeg?raw=true">
-            </div>
-            <div class="card stacked">
-                <img src="https://github.com/camelPhonso/feature/blob/main/tarot/deck.jpeg?raw=true">
-            </div>
-            <div class="card stacked">
-                <img src="https://github.com/camelPhonso/feature/blob/main/tarot/deck.jpeg?raw=true">
-            </div>
-            <div class="card stacked">
-                <img src="https://github.com/camelPhonso/feature/blob/main/tarot/deck.jpeg?raw=true">
-            </div>
-            <div class="card stacked">
-                <img src="https://github.com/camelPhonso/feature/blob/main/tarot/deck.jpeg?raw=true">
-            </div>
-            <div class="card stacked">
-                <img src="https://github.com/camelPhonso/feature/blob/main/tarot/deck.jpeg?raw=true">
-            </div>
-        </div>
-        <form>
-            <button id="pick" type="button">shuffle cards</button>
-        </form>
+                <form id="ask">
+                    <button id="pick" type="button" disabled>Ask a question</button> 
+                    <input type="radio" name="question" id="love" class="question"><label class="label" for="love">Love</label></input>
+                    <input type="radio" name="question" id="money" class="question"><label class="label" for="money">Money</label></input>
+                    <input type="radio" name="question" id="health" class="question"><label class="label" for="health">Health</label></input>
+                </form>
+        </section>
     </body>
 </html>
