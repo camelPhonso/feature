@@ -91,3 +91,32 @@ button{
     font-weight:bold;
     font-size:1.5rem;
 }
+
+/*edit the information shown during read()*/
+.reading{
+    display:flex;
+    flex-flow:column nowrap;
+    margin-left:150px;
+    text-align:justify;
+    width:40vw;
+}
+
+.tname{
+    font-size:3rem;
+    margin-top:0;
+    margin-bottom:0;
+    font-weight:bold;
+    color:var(--highlights);
+}
+
+.ttheme{
+    font-size:1.5rem;
+    margin-bottom:0;
+    color:var(--darks);
+}
+
+.tdescription{
+    font-size:1.2rem;
+    line-height:1.80rem;
+    margin-top:1rem;
+}
