@@ -33,6 +33,7 @@ html{
     width:200px;
     border-radius:20px;
     margin:-50px;
+    box-shadow: -3px -3px 10px;
 }
 
 /*.lined is attributed once the cards are shuffled, to create a responsive feel when the user makes their pick*/
@@ -58,6 +59,13 @@ html{
     width:250px;
     object-fit:fill;
     border-radius:20px;
+}
+
+/*.flip is attributed to any clicked card when calling read()*/
+.flip{
+    transform:rotateY(180deg);
+    transform-style:preserve-3d;
+    transition: 1s;
 }
 
 /*styling the form that allows users to ask their question*/
@@ -90,7 +98,10 @@ button{
     border:none;
     font-weight:bold;
     font-size:1.5rem;
+    transition: 0.5s;
 }
+
+
 
 /*edit the information shown during read()*/
 .reading{
@@ -107,16 +118,43 @@ button{
     margin-bottom:0;
     font-weight:bold;
     color:var(--highlights);
+    animation: fade-in 2s;
 }
 
 .ttheme{
     font-size:1.5rem;
     margin-bottom:0;
     color:var(--darks);
+    animation: fade-in 2s;
 }
 
 .tdescription{
     font-size:1.2rem;
     line-height:1.80rem;
     margin-top:1rem;
+    animation: fade-in 2s;
+}
+
+@keyframes fade-in {
+    from{
+        opacity:0%;
+        transform: translateY(5px);
+    };
+
+    to{
+        opacity:100%;
+        transform: translateY(0);
+    };
+};
+
+@keyframes spread {
+    from{
+        position:absolute;
+        top:50%;
+        left:50%;
+    };
+
+    to{
+        position:unset;
+    };
 }

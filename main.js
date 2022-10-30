@@ -69,6 +69,7 @@ let table = document.getElementById('table');
 
 //function to suffle the cards array and assign to each card div
 function shuffle(){
+    this.preventDefault;
     tarot.sort((a,b) => 0.5 - Math.random());
 
     for (let i = 0; i < deck.length; i++){
@@ -78,6 +79,14 @@ function shuffle(){
         deck[i].classList.remove('right');
         deck[i].classList.remove('left');
     };
+
+    button.innerText = 'pick a card';
+    button.disabled = true;
+
+    //addEventListener that prompts read() to be called
+    for (let i of deck){
+        i.addEventListener('click', read);
+    };
 };
 
 //flip a card and display the reading when clicked
@@ -86,8 +95,9 @@ function read(){
     for (let i = 0; i < tarot.length; i++){
         if (this.getAttribute('name') === tarot[i].name){
             selected = tarot[i];
+            this.classList.add('flip');
             this.innerHTML = '<img src="' + selected.image + '">';
-            this.classList.remove('lined');
+            this.classList.remove('lined');            
         }else{
             deck[i].style.display = 'none';
         };
@@ -118,27 +128,23 @@ function read(){
     reading.appendChild(description);
     description.appendChild(dContent);
 
-    
-    
+    button.innerText = 'start new reading';
+    button.disabled = false;
+    button.removeEventListener('click', shuffle);
 };
 
 //collect the users' question before a shuffle
 function ask(){
     question = this.getAttribute('id'); //save the question asked for use in 'read'
     button.disabled = false;
-    button.innerText = 'Pick a card';
+    button.innerText = 'Shuffle the cards';
 
     for (let i = 0; i < labels.length; i++){
         labels[i].innerText = '';
     };
-};
 
-//call shuffle()
-button.addEventListener('click', shuffle);
-
-//call read()
-for (let i of deck){
-    i.addEventListener('click', read);
+    //addEventListener to prompt shuffle() to be called
+    button.addEventListener('click', shuffle);
 };
 
 //call ask()
