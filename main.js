@@ -122,6 +122,7 @@ function read(){
     reading.appendChild(theme);
     theme.appendChild(tTheme);
 
+    //collect string from the key that matches the question collected during ask()
     let description = document.createElement('p');
     description.classList.add('tdescription');
     let dContent = document.createTextNode(selected[question]);
