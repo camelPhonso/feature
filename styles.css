@@ -59,13 +59,14 @@ html{
     width:250px;
     object-fit:fill;
     border-radius:20px;
+    transform:rotateY(180deg);
 }
 
 /*.flip is attributed to any clicked card when calling read()*/
 .flip{
     transform:rotateY(180deg);
     transform-style:preserve-3d;
-    transition: 1s;
+    transition: 2s;
 }
 
 /*styling the form that allows users to ask their question*/
