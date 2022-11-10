@@ -74,19 +74,14 @@ function shuffle(){
 
     for (let i = 0; i < deck.length; i++){
         deck[i].setAttribute('name',tarot[i].name);
-        deck[i].classList.remove('stacked');
+        deck[i].classList.remove('stacked', 'right', 'left');
         deck[i].classList.add('lined');
-        deck[i].classList.remove('right');
-        deck[i].classList.remove('left');
+        deck[i].addEventListener('click',read);
     };
 
     button.innerText = 'pick a card';
     button.disabled = true;
-
-    //addEventListener that prompts read() to be called
-    for (let i of deck){
-        i.addEventListener('click', read);
-    };
+    button.style.cursor = 'not-allowed'
 };
 
 //flip a card and display the reading when clicked
@@ -131,6 +126,7 @@ function read(){
 
     button.innerText = 'start new reading';
     button.disabled = false;
+    button.style.cursor = 'pointer';
     button.removeEventListener('click', shuffle);
 };
 
@@ -139,6 +135,7 @@ function ask(){
     question = this.getAttribute('id'); //save the question asked for use in 'read'
     button.disabled = false;
     button.innerText = 'Shuffle the cards';
+    button.style.cursor = 'pointer';
 
     for (let i = 0; i < labels.length; i++){
         labels[i].innerText = '';
