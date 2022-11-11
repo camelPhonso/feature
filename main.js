@@ -68,8 +68,8 @@ let labels = document.getElementsByClassName('label');
 let table = document.getElementById('table');
 
 //function to suffle the cards array and assign to each card div
-function shuffle(){
-    this.preventDefault;
+let shuffle = () => {
+    button.preventDefault;
     tarot.sort((a,b) => 0.5 - Math.random());
 
     for (let i = 0; i < deck.length; i++){
@@ -124,10 +124,12 @@ function read(){
     reading.appendChild(description);
     description.appendChild(dContent);
 
-    button.innerText = 'start new reading';
-    button.disabled = false;
-    button.style.cursor = 'pointer';
-    button.removeEventListener('click', shuffle);
+    button.innerText = 'press "Enter" to start a new reading';
+    document.addEventListener('keydown', e => {
+        if(e.key === 'Enter'){
+            window.location.reload(true);   
+        };
+    });
 };
 
 //collect the users' question before a shuffle
